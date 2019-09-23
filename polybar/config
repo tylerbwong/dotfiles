@@ -1,0 +1,267 @@
+[bar/top]
+monitor = eDP-1
+width = 100%
+height = 60
+dpi = 288
+
+background = #212121
+
+padding = 2
+module-margin = 2
+
+font-0 = Consolas:pixelsize=10;6
+font-1 = Font Awesome 5 Free:style=Regular:pixelsize=10;6
+font-2 = Font Awesome 5 Free:style=Solid:pixelsize=10;6
+font-3 = Font Awesome 5 Brands:pixelsize=10;6
+font-4 = Material Icons:style=Regular:pixelsize=10;8
+
+modules-left = wireless-network memory cpu pulseaudio
+modules-center = bspwm
+modules-right = temperature battery date
+
+[module/backlight]
+type = internal/backlight
+format = <ramp> <bar>
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-font = 3
+bar-indicator-foreground = #ff
+bar-fill = ─
+bar-fill-font = 3
+bar-fill-foreground = #c9665e
+bar-empty = ─
+bar-empty-font = 3
+bar-empty-foreground = #44
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+label-active-foreground = #fff
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-default = •
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${BAR.background}
+
+label-active = %icon%
+label-active-background = #aaffffff
+label-active-underline = #ffffff
+label-active-font = 4
+label-active-padding = 4
+
+label-occupied = %icon%
+label-occupied-foreground = #dd
+label-occupied-underline = #666
+label-occupied-font = 4
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-font = 4
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #55
+label-empty-font = 4
+label-empty-padding = 4
+
+label-monocle = 
+label-monocle-underline = ${module/bspwm.label-active-underline}
+label-monocle-background = #33ffffff
+label-monocle-padding = 2
+
+label-locked = 
+label-locked-foreground = #bd2c40
+label-locked-underline = ${module/bspwm.label-monocle-underline}
+label-locked-padding = ${module/bspwm.label-monocle-padding}
+
+label-sticky = 
+label-sticky-foreground = #fba922
+label-sticky-underline = ${module/bspwm.label-monocle-underline}
+label-sticky-padding = ${module/bspwm.label-monocle-padding}
+
+label-private = 
+label-private-foreground = #bd2c40
+label-private-underline = ${module/bspwm.label-monocle-underline}
+label-private-padding = ${module/bspwm.label-monocle-padding}
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+label = CPU %percentage%%
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/date]
+type = internal/date
+date =  %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+[module/memory]
+type = internal/memory
+format = <label>
+label = RAM %percentage_used%%
+
+bar-used-width = 15
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate = 500
+
+[module/wired-network]
+type = internal/network
+interface = net0
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+label-muted =  muted
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/temperature]
+type = internal/temperature
+
+format = <ramp> <label>
+
+format-warn = <ramp> <label-warn>
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/clock]
+type = internal/date
+interval = 2
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+
+; vim:ft=dosini
+

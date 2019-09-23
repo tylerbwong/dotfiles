@@ -1,0 +1,11 @@
+rofi.theme: ~/.config/rofi/themes/term-dark.rasi
+rofi.eh: 1
+rofi.lines: 5
+rofi.fixed-num-lines: true
+rofi.width: 35
+rofi.padding: 5
+rofi.sidebar-mode: true
+rofi.show-match: false
+rofi.combi-modi: window,run
+rofi.window-format: {c}  ›  {t}
+! vim:ft=xdefaults
