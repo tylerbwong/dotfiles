@@ -2,7 +2,7 @@
 sxhkd &
 xrandr --output eDP-1 --dpi 192
 xbacklightmon &
-compton -b &
+picom -b &
 ~/.config/polybar/launch.sh &
 feh --no-fehbg --bg-fill ~/Pictures/background.png
 wmname LG3D
