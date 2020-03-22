@@ -1,5 +1,5 @@
 * {
-  font: "Source Code Pro 24";
+  font: "Source Code Pro 12";
 
   background: rgba(33, 33, 33, 100%);
   foreground: rgba(255, 255, 255, 100%);
